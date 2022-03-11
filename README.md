@@ -1,17 +1,18 @@
 # Sustainability Hackathon Project 3 Example Code
 
-> Example code for project 3 in the March 2022 Sustainability Hackathon.
+> Example code for project 3 in the [March 2022 Hackathon in AI for Sustainability](https://bda-hull.github.io/hackathon-ai+sus.html).
 
-Welcome to project 3 of the sustainability hackathon! This repository contains some sample code to get you started.
+Welcome to project 3 of the [March 2022 hackathon in AI for sustainability](https://bda-hull.github.io/hackathon-ai+sus.html)! This repository contains some sample code to get you started.
 
-The canonical URL for this lab sheet is: TODO_INSERT_LINK_HERE
+The canonical URL for this lab sheet is: https://github.com/sbrl/Hackathon202203-Project-3#readme
 
 Please visit this link for the most up-to-date version of this lab sheet.
 
 ## System Requirements
- - Python 3.7+, pip
+ - Python 3.7+, pip (usually bundled automatically. Linux users may want to run `sudo apt install python3-pip`)
  - Nvidia GPU (optional; Linux users must use the propriety Nvidia driver to get CUDA support)
- - 3 GiB free disk space
+ - 2 GiB free disk space (more if you want to download images)
+     - A USB flash drive would also work here
 
 
 ## Getting Started
@@ -30,7 +31,6 @@ Instead, these are hosted on-campus for faster downloads. We'll need to download
  - Using a Lab PC on-campus
  - Using your own device on-campus connected to eduroam (UoH-Guest will NOT work)
  - Using the University's VPN
-
 
 To get started, you will need 2 things:
 
@@ -219,8 +219,18 @@ python3 make_predictions.py
 
 It might take a minute to run. Once it's complete, you should see something like this:
 
-```
-TODO: Show some example output here
+```tsv
+item_number	positive	negative
+0	0.9116541147232056	0.08834586292505264
+1	0.07721546292304993	0.9227845668792725
+2	0.5343278050422668	0.46567219495773315
+3	0.8913617134094238	0.10863829404115677
+4	0.9576172232627869	0.04238273575901985
+5	0.32121869921684265	0.6787812113761902
+6	0.19379104673862457	0.8062089085578918
+7	0.11957920342683792	0.8804208040237427
+8	0.16673220694065094	0.8332678079605103
+9	0.866070568561554	0.13392946124076843
 ```
 
 
