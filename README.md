@@ -8,6 +8,8 @@ The canonical URL for this lab sheet is: https://github.com/sbrl/Hackathon202203
 
 Please visit this link for the most up-to-date version of this lab sheet.
 
+TODO: If we end up moving this repository, don't forget to update *all* the URL references below, above, and on the dataset download server!
+
 ## System Requirements
  - Python 3.7+, pip (usually bundled automatically. Linux users may want to run `sudo apt install python3-pip`)
  - Nvidia GPU (optional; Linux users must use the propriety Nvidia driver to get CUDA support)
@@ -18,7 +20,21 @@ Please visit this link for the most up-to-date version of this lab sheet.
 ## Getting Started
 
 ### Step 1: Download the code
-TODO: Include instructions on cloning the repository here. As of 2022-02-28, we don't currently know where we're hosting the GitHub repo.
+To start, we need to download the sample code. We will do this by creating a new repository.
+
+First, visit this url in your browser: <https://github.com/sbrl/Hackathon202203-Project-3>.
+
+Then, after ensuring you're signed into GitHub, click the green "Use this template" button in the top right:
+
+![](https://i.imgur.com/Jl5ax2Y.png)
+
+You should see the following web page:
+
+![](https://i.imgur.com/HIHim3o.png)
+
+Fill in the repository name (and optionally the description), and then click "Create repository from template".
+
+From here, you will need to clone your new repository. The following guide is great to help you do this: <https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository>
 
 
 ### Step 2: Download the dataset and model
@@ -50,6 +66,8 @@ This includes:
  - Larger and slightly more accurate pretrained models
 
 Downloading these extra resources is **not required** to follow this guide.
+
+**Important:** The data provided here must **only** be used for the hackathon. If you'd like to use it for something else, then you will need to [apply for your own Twitter developer account](https://developer.twitter.com/en/portal/products) to avoid breaking their terms of service.
 
 
 #### Dataset files
