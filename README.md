@@ -280,3 +280,13 @@ Sure! You can download them from here: <http://hackathon2022.mooncarrot.space/RE
 
 ### How do the users and tweets relate to one another?
 The `author_id` property on the tweet will match the `id` field of the user. Note that all these fields are anonymised as to protect users' privacy.
+
+
+## Footnote
+If you've read this far, thanks so much! I hope the hackathon has been a fun experience and you've learnt something.
+
+For those curious, this project is based on my PhD project, which has the title "Using Big Data and AI to dynamically predict flood risk". I'm part of both the [Big data Analytics](https://bda-hull.github.io/) research group in the Department of Computer Science and Technology and the Energy and Environment Institute.
+
+For those interested in what I do, I have [a blog](https://starbeamrainbowlabs.com/) on which I talk about my project and other things that interest me.
+
+I'd like to thank Nina Dethlefs, my supervisor - without her tireless dedication and support I would not have been able to get as far as I have with my PhD project.
