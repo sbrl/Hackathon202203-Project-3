@@ -172,22 +172,56 @@ A place object might look like this:
 ### Step 3: Install dependencies
 Open your command prompt or terminal (Windows users: try [this tutorial](https://helpdeskgeek.com/how-to/open-command-prompt-folder-windows-explorer/) if you're unsure).
 
-Then, **Windows users** run this command:
+
+#### If you are using **Windows**
+If you are using **Windows** - including on a University-owned Lab machine, follow these steps.
+
+The only dependency that the sample code has is [Tensorflow](https://tensorflow.org), so that is what we will be installing here. If you need to install any **other** Python packages, then do this:
+
+```bash
+python -m pip install --user package_name
+```
+
+To install Tensorflow, we need to know what version fo Python we are running. To do this, open a command prompt, and start a Python REPL by entering the following command:
+
+```bash
+python
+```
+
+Keep note of the version of Python you have. For example, it might look like this:
+
+```
+Python 3.9.5 (tags/v3.9.5:0a7dcbd, May  3 2021, 17:13:28) [MSC v.1928 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+In this case, the Python version is **3.9.5**.
+
+Next, visit this page: <https://tensorflow.org/install/pip#package-location>
+
+...and scroll down to the "Windows" section of the table.
+
+Notice that for each Python version, there is 1 row of the table for Tensorflow with GPU support, and 1 row for Tensorflow that uses the CPU. Copy the URL that is next to the row in the table that corresponds to your Python version and whether you want GPU support.
+
+You need GPU support if you have an Nvidia GPU. For those using University-owned Lab PCs, then if you are in the **Turing Lab** (RBB-335), then you have a GPU. If you are in the **Cray Lab**, then 
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-If you are a **Linux user**, run this command instead:
+#### If you are using **Linux**
+If you are using **Linux**, run this command instead:
 
 ```bash
 sudo pip3 install -r requirements.txt
 ```
 
-## Step 4: Making predictions
+
+### Step 4: Making predictions
 Now that we have our dependencies installed, we can look at running the codebase. Let's take a quick look at the files you'll see when you first look at the example code.
 
-### Step 4.1: Code layout
+#### Step 4.1: Code layout
 There are several Python files here, but don't worry! Most of them you can ignore. Here's a quick overview as to what they do:
 
  - `make_predictions.py`: The main sample code! This shows you how to load the pre-trained model you downloaded above and maek a prediction with it.
@@ -197,7 +231,7 @@ There are several Python files here, but don't worry! Most of them you can ignor
  - `ai_layers/`: Definitely ignore this (it's significantly complicated)! This is the internal layer definitions required by the model in order to work.
 
 
-### Step 4.2: Filepaths
+#### Step 4.2: Filepaths
 Before we can run the code, we need to update the filepaths in `make_predictions.py` so that they point to the right place. Find the lines that look like this:
 
 ```python
@@ -220,7 +254,7 @@ filepath_tweets = "dataset/tweets.jsonl"
 These filepaths can be relative to `make_predictions.py`.
 
 
-### Step 4.3: Making predictions
+#### Step 4.3: Making predictions
 Now we're ready to make some predictions! To make some predictions, we need to run the `make_predictions.py` Python script. This is easy to do, but differs slightly depending on your operating system.
 
 **Windows users:** Navigate to the folder that contains `make_predictions.py` in Windows File Explorer. Then, click in the address bar, type `cmd`, and then hit enter to open your command prompt.
@@ -252,7 +286,7 @@ item_number	positive	negative
 ```
 
 
-### Step 5: What comes next
+#### Step 5: What comes next
 Thanks for following this guide! If you need any help or have any questions, we're happy to assist in the lab :-)
 
 See also the *Frequently Asked Questions* section below for some common questions.
