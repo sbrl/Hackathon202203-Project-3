@@ -11,7 +11,7 @@ Please visit this link for the most up-to-date version of this lab sheet.
 TODO: If we end up moving this repository, don't forget to update *all* the URL references below, above, and on the dataset download server!
 
 ## System Requirements
- - Python 3.7+, pip (usually bundled automatically. Linux users may want to run `sudo apt install python3-pip`)
+ - Python 3.7+, pip (usually bundled automatically. Linux users may want to run `sudo apt install python3-pip`) - see below for installation instructions
  - Nvidia GPU (optional; Linux users must use the propriety Nvidia driver to get CUDA support)
  - 2 GiB free disk space (more if you want to download images)
      - A USB flash drive would also work here
@@ -182,33 +182,53 @@ The only dependency that the sample code has is [Tensorflow](https://tensorflow.
 python -m pip install --user package_name
 ```
 
-To install Tensorflow, we need to know what version fo Python we are running. To do this, open a command prompt, and start a Python REPL by entering the following command:
+
+##### If you are on your personal computer
+You likely have admin rights over your personal computer. If this is not the case, skip this section and continue from "If you are on a University-owned PC".
+
+First, we need to install the 64 bit version of Python. If you don't already have this installed, navigate to this URL: <https://www.python.org/downloads/windows/>
+
+Then, click "Latest Python Release - Python 3.??.?" (the question marks may change version, but this doesn't matter).
+
+Scroll down to the "Files" section of the page, and download the "Windows installer (64-bit)". Once downloaded, run this installer to completion.
+
+Now that we have Python installed, we can install Tensorflow. Do this by opening a command prompt and using the `cd` command to navigate to the folder containing your code (or reuse a command prompt from earlier in this guide).
+
+Then, run the following command:
 
 ```bash
-python
+python -m pip install --user -r requirements.txt
 ```
 
-Keep note of the version of Python you have. For example, it might look like this:
 
+##### If you are on a University-owned PC
+If you are on a University-owned PC, then you probably do not have admin rights. In this case, we need to setup a portable Python environment.
+
+First, navigate to this URL: <https://www.python.org/downloads/windows/>
+
+Then, click "Latest Python Release - Python 3.??.?" (the question marks may change version, but this doesn't matter).
+
+Scroll down to the "Files" section of the page, and download "Windows embeddable package (64-bit)". This will be a .zip file. Extract this ZIP to a new directory somewhere.
+
+Once done, locate the file that is named `python310._pth`, and delete it. The numbers (`310`) may be different, but the `._pth` at the end will be the same.
+
+Then, download the following file and save it somewhere too: <https://bootstrap.pypa.org/get-pip.py>
+
+Now, run the `get-pip.py` file we just downloaded like so:
+
+```batch
+G:\path\to\python.exe path\to\get-pip.py
 ```
-Python 3.9.5 (tags/v3.9.5:0a7dcbd, May  3 2021, 17:13:28) [MSC v.1928 32 bit (Intel)] on win32
-Type "help", "copyright", "credits" or "license" for more information.
->>>
-```
 
-In this case, the Python version is **3.9.5**.
+...where `G:\path\to\python.exe` is the path to the `python.exe` file from the above `.zip` we downloaded from the Python website, and `path\to\get-pip.py` is the path to `get-pip.py` that we just downloaded.
 
-Next, visit this page: <https://tensorflow.org/install/pip#package-location>
-
-...and scroll down to the "Windows" section of the table.
-
-Notice that for each Python version, there is 1 row of the table for Tensorflow with GPU support, and 1 row for Tensorflow that uses the CPU. Copy the URL that is next to the row in the table that corresponds to your Python version and whether you want GPU support.
-
-You need GPU support if you have an Nvidia GPU. For those using University-owned Lab PCs, then if you are in the **Turing Lab** (RBB-335), then you have a GPU. If you are in the **Cray Lab**, then 
+Now that we have our portable Python installed, we can install Tensorflow:
 
 ```bash
-python -m pip install -r requirements.txt
+G:\path\to\python.exe python -m pip install --user -r requirements.txt
 ```
+
+This should complete the setup required to install Python and other dependencies.
 
 #### If you are using **Linux**
 If you are using **Linux**, run this command instead:
