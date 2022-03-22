@@ -55,7 +55,7 @@ model = tf.keras.models.load_model(filepath_checkpoint, custom_objects={
 })
 
 # Load the first 10 tweets in
-handle_tweets = io.open(filepath_tweets, "r")
+handle_tweets = io.open(filepath_tweets, "r", encoding="utf8")
 tweets = []
 i = 0
 for line in handle_tweets:
