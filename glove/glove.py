@@ -57,7 +57,7 @@ class GloVe:
 		"""Loads the GloVe database from a given file."""
 		sys.stderr.write("\n")
 		start = time.time()
-		handle = io.open(self.filepath, "r")
+		handle = io.open(self.filepath, "r", encoding="utf8")
 		for i, line in enumerate(handle):
 			parts = line.split(" ", maxsplit=1)
 			
