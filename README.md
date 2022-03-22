@@ -230,13 +230,16 @@ G:\path\to\python.exe python -m pip install --user -r requirements.txt
 
 This should complete the setup required to install Python and other dependencies.
 
+<!-- TODO: Optionally add step about CuDNN. This is required by Tensorflow for GPU support, but the University Lab PCs don't have it installed. Additionally, personal machines will also need it installed in order to use the GPU. Not sure on Linux, but the default nvidia drivers seem to be enough? Further testing is required. -->
+
 #### If you are using **Linux**
-If you are using **Linux**, run this command instead:
+If you are using **Linux**, simply run this command instead:
 
 ```bash
 sudo pip3 install -r requirements.txt
 ```
 
+(side note: if you have access to the University's Viper HPC, the process is slightly different. Get in touch with the Viper support team they can explain the process.)
 
 ### Step 4: Making predictions
 Now that we have our dependencies installed, we can look at running the codebase. Let's take a quick look at the files you'll see when you first look at the example code.
