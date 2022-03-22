@@ -1,3 +1,4 @@
+get-pip.py
 dataset/
 transformer-g*/
 glove.twitter.27B.*d.txt
