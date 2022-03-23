@@ -170,17 +170,19 @@ A place object might look like this:
 
 
 ### Step 3: Install dependencies
-Open your command prompt or terminal (Windows users: try [this tutorial](https://helpdeskgeek.com/how-to/open-command-prompt-folder-windows-explorer/) if you're unsure).
+To run the sample code, we need to first install Python and Tensorflow. How we do this depends on what operating system and computer you are 
 
 
 #### If you are using **Windows**
 If you are using **Windows** - including on a University-owned Lab machine, follow these steps.
 
-The only dependency that the sample code has is [Tensorflow](https://tensorflow.org), so that is what we will be installing here. If you need to install any **other** Python packages, then do this:
+The only dependency that the sample code has is [Tensorflow](https://tensorflow.org), so that is what we will be installing here. If you need to install any **other** Python packages, then do this in your command prompt once you have Python and `pip` installed:
 
 ```bash
 python -m pip install --user package_name
 ```
+
+From here on, this tutorial will require that you open your command prompt. If you're unsure on how to do this, try [this tutorial](https://helpdeskgeek.com/how-to/open-command-prompt-folder-windows-explorer/).
 
 
 ##### If you are on your personal computer
@@ -233,7 +235,7 @@ This should complete the setup required to install Python and other dependencies
 <!-- TODO: Optionally add step about CuDNN. This is required by Tensorflow for GPU support, but the University Lab PCs don't have it installed. Additionally, personal machines will also need it installed in order to use the GPU. Not sure on Linux, but the default nvidia drivers seem to be enough? Further testing is required. -->
 
 #### If you are using **Linux**
-If you are using **Linux**, simply run this command instead:
+If you are using **Linux**, it is assuemd you already have some level of familiarity with the terminal. Simply run this command instead after `cd`ing to your cloned repository from earlier:
 
 ```bash
 sudo pip3 install -r requirements.txt
@@ -291,6 +293,14 @@ Once you have your terminal or command prompt option, run the following command:
 ```bash
 python3 make_predictions.py
 ```
+
+if you are on a University-owned lab PC running Windows, you will need to provide the full path to the `python.exe` executable as you did above:
+
+```batch
+G:\path\to\python.exe make_predictions.py
+```
+
+...where `G:\path\to\python.exe` is the path to the `python.exe` executable as above.
 
 It might take a minute to run. Once it's complete, you should see something like this:
 
