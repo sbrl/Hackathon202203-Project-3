@@ -248,7 +248,6 @@ set PATH=G:\path\to\cudnn\bin;%PATH%
 
 This will allow Tensorflow to find CuDNN. **You will need to run the above command every time you open a new command prompt.** This is because without it, Tensorflow is unable to locate CuDNN (which it depends on to access the GPU).
 
-<!-- TODO: Optionally add step about CuDNN. This is required by Tensorflow for GPU support, but the University Lab PCs don't have it installed. Additionally, personal machines will also need it installed in order to use the GPU. Not sure on Linux, but the default nvidia drivers seem to be enough? Further testing is required. -->
 
 #### If you are using **Linux**
 If you are using **Linux**, it is assuemd you already have some level of familiarity with the terminal. Simply run this command instead after `cd`ing to your cloned repository from earlier:
@@ -258,6 +257,8 @@ sudo pip3 install -r requirements.txt
 ```
 
 If you encounter an error when running the `make_predictions.py` Python script below claiming that it can't open a library, this is most likely because you don't have CuDNN installed. To fix that, download the installer from here and the run it: <https://developer.nvidia.com/rdp/cudnn-archive> [Nvidia account required]
+
+<!-- Ref CuDNN, not sure on Linux - but the default nvidia drivers seem to be enough? Further testing is required. -->
 
 (side note: if you have access to the University's Viper HPC, the process is slightly different on there. Get in touch with the Viper support team and they can explain the process.)
 
