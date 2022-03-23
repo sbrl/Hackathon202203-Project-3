@@ -202,6 +202,8 @@ Then, run the following command:
 python -m pip install --user -r requirements.txt
 ```
 
+If you would like to enable GPU support, you will also need not only Nvidia's propriety drivers installed, but also Nvidia's CuDNN library too. Download the installer from here and the run it: <https://developer.nvidia.com/rdp/cudnn-archive> [Nvidia account required]
+
 
 ##### If you are on a University-owned PC
 If you are on a University-owned PC, then you probably do not have admin rights. In this case, we need to setup a portable Python environment.
@@ -232,6 +234,20 @@ G:\path\to\python.exe python -m pip install --user -r requirements.txt
 
 This should complete the setup required to install Python and other dependencies.
 
+This next step is **optional**, and requires an additional **1.3GiB disk space**. In order to enable GPU support for Tensorflow, 1 additional step is required to make it work. It is strongly recommended that you have completed the above steps on a USB flash drive if you enable GPU support.
+
+TODO: Check if the uni lab PCs have 7-zip installed
+
+First, download CuDNN from here: <http://hackathon2022.mooncarrot.space/cudnn8.tar.xz> [420MiB download, 1.3GiB extracted]
+
+Extract this to a directory. Then, to enable CUDA support, run the following command in your command prompt:
+
+```batch
+set PATH=G:\path\to\cudnn\bin;%PATH%
+```
+
+This will allow Tensorflow to find CuDNN. **You will need to run the above command every time you open a new command prompt.** This is because without it, Tensorflow is unable to locate CuDNN (which it depends on to access the GPU).
+
 <!-- TODO: Optionally add step about CuDNN. This is required by Tensorflow for GPU support, but the University Lab PCs don't have it installed. Additionally, personal machines will also need it installed in order to use the GPU. Not sure on Linux, but the default nvidia drivers seem to be enough? Further testing is required. -->
 
 #### If you are using **Linux**
@@ -241,7 +257,11 @@ If you are using **Linux**, it is assuemd you already have some level of familia
 sudo pip3 install -r requirements.txt
 ```
 
-(side note: if you have access to the University's Viper HPC, the process is slightly different. Get in touch with the Viper support team they can explain the process.)
+If you encounter an error when running the `make_predictions.py` Python script below claiming that it can't open a library, this is most likely because you don't have CuDNN installed. To fix that, download the installer from here and the run it: <https://developer.nvidia.com/rdp/cudnn-archive> [Nvidia account required]
+
+(side note: if you have access to the University's Viper HPC, the process is slightly different on there. Get in touch with the Viper support team and they can explain the process.)
+
+
 
 ### Step 4: Making predictions
 Now that we have our dependencies installed, we can look at running the codebase. Let's take a quick look at the files you'll see when you first look at the example code.
