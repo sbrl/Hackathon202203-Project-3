@@ -62,7 +62,7 @@ For those who are adventurous, a full list of datasets and pre-trained models av
 This includes:
 
  - Many more tweets
- - Images associated with tweets [TODO Download StormFranklin images]
+ - Images associated with tweets
  - Larger and slightly more accurate pretrained models
 
 Downloading these extra resources is **not required** to follow this guide.
@@ -236,11 +236,9 @@ This should complete the setup required to install Python and other dependencies
 
 This next step is **optional**, and requires an additional **1.3GiB disk space**. In order to enable GPU support for Tensorflow, 1 additional step is required to make it work. It is strongly recommended that you have completed the above steps on a USB flash drive if you enable GPU support.
 
-TODO: Check if the uni lab PCs have 7-zip installed
-
 First, download CuDNN from here: <http://hackathon2022.mooncarrot.space/cudnn8.tar.xz> [420MiB download, 1.3GiB extracted]
 
-Extract this to a directory. Then, to enable CUDA support, run the following command in your command prompt:
+Extract this to a directory (7-Zip required; On Windows: right click → "7-Zip" → Open Archive → Double click on the `.tar` file → Extract). Then, to enable CUDA support, run the following command in your command prompt:
 
 ```batch
 set PATH=G:\path\to\cudnn\bin;%PATH%
@@ -261,7 +259,6 @@ If you encounter an error when running the `make_predictions.py` Python script b
 <!-- Ref CuDNN, not sure on Linux - but the default nvidia drivers seem to be enough? Further testing is required. -->
 
 (side note: if you have access to the University's Viper HPC, the process is slightly different on there. Get in touch with the Viper support team and they can explain the process.)
-
 
 
 ### Step 4: Making predictions
