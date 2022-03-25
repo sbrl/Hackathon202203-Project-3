@@ -8,7 +8,7 @@ The canonical URL for this lab sheet is: https://github.com/sbrl/Hackathon202203
 
 Please visit this link for the most up-to-date version of this lab sheet.
 
-TODO: If we end up moving this repository, don't forget to update *all* the URL references below, above, and on the dataset download server!
+<!-- TODO: If we end up moving this repository, don't forget to update *all* the URL references below, above, and on the dataset download server! -->
 
 ## System Requirements
  - Python 3.7+, pip (usually bundled automatically. Linux users may want to run `sudo apt install python3-pip`) - see below for installation instructions
@@ -57,7 +57,7 @@ Download the pretrained model from this link: <http://hackathon2022.mooncarrot.s
 
 Download the StormFranklin dataset from this link: <http://hackathon2022.mooncarrot.space/dataset-StormFranklin.zip> [4.7MiB, 18MiB extracted]
 
-For those who are adventurous, a full list of datasets and pre-trained models available, visit the following page: <http://hackathon2022.mooncarrot.space/README.html>
+For those who are feeling adventurous, a full list of datasets and pre-trained models available, visit the following page: <http://hackathon2022.mooncarrot.space/README.html>
 
 This includes:
 
