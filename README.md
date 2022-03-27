@@ -84,7 +84,7 @@ A tweet object might look like this (pretty-printed for your convenience):
 ```json
 {
 	"author_id": "XypeYhmi-BRGfuUOAznzsg",
-	"text": "#Floods Hit York's #Jorvik #Viking Centre\\n#Centrequot #Yorks\\n<https://t.co/bPalntkb85> <https://t.co/DVJb2xs5GI" > ,
+	"text": "#Floods Hit York's #Jorvik #Viking Centre\\n#Centrequot #Yorks\\n<https://t.co/bPalntkb85> <https://t.co/DVJb2xs5GI>",
 	"id": "-Ey1Sx_7GFhE2NfcREhILA",
 	"entities": {
 		"hashtags": [
