@@ -8,7 +8,7 @@ The canonical URL for this lab sheet is: https://github.com/sbrl/Hackathon202203
 
 Please visit this link for the most up-to-date version of this lab sheet.
 
-TODO: If we end up moving this repository, don't forget to update *all* the URL references below, above, and on the dataset download server!
+<!-- TODO: If we end up moving this repository, don't forget to update *all* the URL references below, above, and on the dataset download server! -->
 
 ## System Requirements
  - Python 3.7+, pip (usually bundled automatically. Linux users may want to run `sudo apt install python3-pip`) - see below for installation instructions
@@ -57,12 +57,12 @@ Download the pretrained model from this link: <http://hackathon2022.mooncarrot.s
 
 Download the StormFranklin dataset from this link: <http://hackathon2022.mooncarrot.space/dataset-StormFranklin.zip> [4.7MiB, 18MiB extracted]
 
-For those who are adventurous, a full list of datasets and pre-trained models available, visit the following page: <http://hackathon2022.mooncarrot.space/README.html>
+For those who are feeling adventurous, a full list of datasets and pre-trained models available, visit the following page: <http://hackathon2022.mooncarrot.space/README.html>
 
 This includes:
 
  - Many more tweets
- - Images associated with tweets [TODO Download StormFranklin images]
+ - Images associated with tweets
  - Larger and slightly more accurate pretrained models
 
 Downloading these extra resources is **not required** to follow this guide.
@@ -84,7 +84,7 @@ A tweet object might look like this (pretty-printed for your convenience):
 ```json
 {
 	"author_id": "XypeYhmi-BRGfuUOAznzsg",
-	"text": "#Floods Hit York's #Jorvik #Viking Centre\\n#Centrequot #Yorks\\n<https://t.co/bPalntkb85> <https://t.co/DVJb2xs5GI" > ,
+	"text": "#Floods Hit York's #Jorvik #Viking Centre\\n#Centrequot #Yorks\\n<https://t.co/bPalntkb85> <https://t.co/DVJb2xs5GI>",
 	"id": "-Ey1Sx_7GFhE2NfcREhILA",
 	"entities": {
 		"hashtags": [
@@ -170,17 +170,19 @@ A place object might look like this:
 
 
 ### Step 3: Install dependencies
-Open your command prompt or terminal (Windows users: try [this tutorial](https://helpdeskgeek.com/how-to/open-command-prompt-folder-windows-explorer/) if you're unsure).
+To run the sample code, we need to first install Python and Tensorflow. How we do this depends on what operating system and computer you are 
 
 
 #### If you are using **Windows**
 If you are using **Windows** - including on a University-owned Lab machine, follow these steps.
 
-The only dependency that the sample code has is [Tensorflow](https://tensorflow.org), so that is what we will be installing here. If you need to install any **other** Python packages, then do this:
+The only dependency that the sample code has is [Tensorflow](https://tensorflow.org), so that is what we will be installing here. If you need to install any **other** Python packages, then do this in your command prompt once you have Python and `pip` installed:
 
 ```bash
 python -m pip install --user package_name
 ```
+
+From here on, this tutorial will require that you open your command prompt. If you're unsure on how to do this, try [this tutorial](https://helpdeskgeek.com/how-to/open-command-prompt-folder-windows-explorer/).
 
 
 ##### If you are on your personal computer
@@ -199,6 +201,8 @@ Then, run the following command:
 ```bash
 python -m pip install --user -r requirements.txt
 ```
+
+If you would like to enable GPU support, you will also need not only Nvidia's propriety drivers installed, but also Nvidia's CuDNN library too. Download the installer from here and the run it: <https://developer.nvidia.com/rdp/cudnn-archive> [Nvidia account required]
 
 
 ##### If you are on a University-owned PC
@@ -230,16 +234,32 @@ G:\path\to\python.exe python -m pip install --user -r requirements.txt
 
 This should complete the setup required to install Python and other dependencies.
 
-<!-- TODO: Optionally add step about CuDNN. This is required by Tensorflow for GPU support, but the University Lab PCs don't have it installed. Additionally, personal machines will also need it installed in order to use the GPU. Not sure on Linux, but the default nvidia drivers seem to be enough? Further testing is required. -->
+This next step is **optional**, and requires an additional **1.3GiB disk space**. In order to enable GPU support for Tensorflow, 1 additional step is required to make it work. It is strongly recommended that you have completed the above steps on a USB flash drive if you enable GPU support.
+
+First, download CuDNN from here: <http://hackathon2022.mooncarrot.space/cudnn8.tar.xz> [420MiB download, 1.3GiB extracted]
+
+Extract this to a directory (7-Zip required; On Windows: right click → "7-Zip" → Open Archive → Double click on the `.tar` file → Extract). Then, to enable CUDA support, run the following command in your command prompt:
+
+```batch
+set PATH=G:\path\to\cudnn\bin;%PATH%
+```
+
+This will allow Tensorflow to find CuDNN. **You will need to run the above command every time you open a new command prompt.** This is because without it, Tensorflow is unable to locate CuDNN (which it depends on to access the GPU).
+
 
 #### If you are using **Linux**
-If you are using **Linux**, simply run this command instead:
+If you are using **Linux**, it is assuemd you already have some level of familiarity with the terminal. Simply run this command instead after `cd`ing to your cloned repository from earlier:
 
 ```bash
 sudo pip3 install -r requirements.txt
 ```
 
-(side note: if you have access to the University's Viper HPC, the process is slightly different. Get in touch with the Viper support team they can explain the process.)
+If you encounter an error when running the `make_predictions.py` Python script below claiming that it can't open a library, this is most likely because you don't have CuDNN installed. To fix that, download the installer from here and the run it: <https://developer.nvidia.com/rdp/cudnn-archive> [Nvidia account required]
+
+<!-- Ref CuDNN, not sure on Linux - but the default nvidia drivers seem to be enough? Further testing is required. -->
+
+(side note: if you have access to the University's Viper HPC, the process is slightly different on there. Get in touch with the Viper support team and they can explain the process.)
+
 
 ### Step 4: Making predictions
 Now that we have our dependencies installed, we can look at running the codebase. Let's take a quick look at the files you'll see when you first look at the example code.
@@ -291,6 +311,14 @@ Once you have your terminal or command prompt option, run the following command:
 ```bash
 python3 make_predictions.py
 ```
+
+if you are on a University-owned lab PC running Windows, you will need to provide the full path to the `python.exe` executable as you did above:
+
+```batch
+G:\path\to\python.exe make_predictions.py
+```
+
+...where `G:\path\to\python.exe` is the path to the `python.exe` executable as above.
 
 It might take a minute to run. Once it's complete, you should see something like this:
 
