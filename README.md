@@ -212,7 +212,7 @@ Scroll down to the "Files" section of the page, and download "Windows embeddable
 
 Once done, locate the file that is named `python310._pth`, and delete it. The numbers (`310`) may be different, but the `._pth` at the end will be the same.
 
-Then, download the following file and save it somewhere too: <https://bootstrap.pypa.org/get-pip.py>
+Then, download the following file and save it somewhere too: <https://bootstrap.pypa.io/get-pip.py>
 
 Now, run the `get-pip.py` file we just downloaded like so:
 
