@@ -229,7 +229,7 @@ G:\path\to\python.exe path\to\get-pip.py
 Now that we have our portable Python installed, we can install Tensorflow:
 
 ```bash
-G:\path\to\python.exe python -m pip install --user -r requirements.txt
+G:\path\to\python.exe -m pip install --user -r requirements.txt
 ```
 
 This should complete the setup required to install Python and other dependencies.
